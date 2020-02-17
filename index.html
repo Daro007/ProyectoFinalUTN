@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Trabajo final</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font-awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="header grid-principal">
+      <div class="header-contenido">
+        <button class="abrir-nav">&#9776;</button>
+
+        <nav class="nav">
+          <button aria-label="Close navigation" class="cerrar-nav">
+            &times;
+          </button>
+          <ul class="nav-li">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link pagina-actual">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="servicios.html" class="nav-link">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a href="contacto.html" class="nav-link">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="main grid-principal">
+        <h1><span class="color-destacado">NOMAD </span>Agencia Digital</h1>
+        <br />
+        <h1 class="main-titulo">
+          Somos una
+          <span class="color-destacado">agencia de marketing digital</span>,
+          dedicados 100% a incrementar el tráfico de tu web.
+        </h1>
+        <p class="main-subtitulo">
+          Somos un grupo de nómades digitales altamente motivados en hacer
+          crecer tu negocio. Dominamos las últimas técnicas de marketing
+          digital.
+        </p>
+        <button class="btn btn-newsLetter" onclick="datosUsuario()">
+          Suscribete a la News Letter
+        </button>
+      </section>
+
+      <section class="info grid-principal">
+        <div class="col">
+          <h2 class="titulo-seccion titulo-centrado">Sobre nosotros</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="col">
+          <h2 class="titulo-seccion titulo-centrado">
+            Nuestras habilidades
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="col">
+          <h2 class="titulo-seccion titulo-centrado">Ponte en contacto</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer grid-principal">
+      <div class="footer-principal">
+        <p class="footer-texto">
+          Somos un equipo de nómades digitales enfocados en hacer crecer tu
+          negocio online a través de nuestros servicios. Marketing de
+          contenidos, SEO y mucho mas.
+        </p>
+        <p class="footer-sello">
+          Nomad Agencia Digital 2019 <br />
+          © Copyright 2019
+        </p>
+      </div>
+      <ul class="social-list">
+        <li class="social-item">
+          <a href="#" class="social-link"
+            ><i class="fab fa-facebook-square"></i
+          ></a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="social-item">
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./nav.js"></script>
+    <script src="./datosUsuario.js"></script>
+  </body>
+</html>
