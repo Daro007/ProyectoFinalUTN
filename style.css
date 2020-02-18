@@ -112,14 +112,17 @@ strong {
   border-radius: 3px;
 }
 
-.btn-newsLetter {
+.btn-newsLetter,
+.btn-contacto{
   background: #ffe600;
   color: #000;
   justify-self: start;
 }
 
 .btn-newsLetter:hover,
-.btn-newsLetter:focus {
+.btn-newsLetter:focus,
+.btn-contacto:hover,
+.btn.btn-contacto:focus{
   background: #ffc400;
 }
 
