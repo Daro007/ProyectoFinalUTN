@@ -122,7 +122,7 @@ strong {
 .btn-newsLetter:hover,
 .btn-newsLetter:focus,
 .btn-contacto:hover,
-.btn.btn-contacto:focus{
+.btn-contacto:focus{
   background: #ffc400;
 }
 
