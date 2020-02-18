@@ -1,0 +1,471 @@
+/* Diseño Mobile First */
+
+
+/* ==================
+    General
+===================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #404040;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ==================
+    Tipografia
+===================== */
+
+h1,
+h2,
+strong {
+  font-weight: 700;
+}
+
+.color-destacado {
+  color: #ffe600;
+}
+
+.titulo,
+.subtitulo {
+  grid-column: 2 / -2;
+  color: #000;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  justify-self: center;
+}
+
+.titulo::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 30px;
+  background: #ffe600;
+  margin-top: -40px;
+  margin-left: 15px;
+}
+
+.subtitulo {
+  margin: 0.5em 0 3em;
+  font-size: 1.125rem;
+}
+
+.main-titulo {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.main-subtitulo {
+  font-size: 1.125rem;
+}
+
+.titulo-seccion {
+  font-size: 1.125rem;
+  color: #000;
+  margin-top: 1.25em;
+}
+
+.titulo-seccion::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin-top: 10px;
+  background: #ffe600;
+}
+
+.titulo-centrado::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo-seccion:first-child {
+  margin-top: 0;
+}
+
+/* ==================
+    Botones
+===================== */
+
+.btn {
+  padding: 1em 2em;
+  font-weight: 700;
+  font-family: inherit;
+  margin-top: 0.5em;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.btn-newsLetter {
+  background: #ffe600;
+  color: #000;
+  justify-self: start;
+}
+
+.btn-newsLetter:hover,
+.btn-newsLetter:focus {
+  background: #ffc400;
+}
+
+.btn-form {
+  justify-self: end;
+}
+
+/* ==================
+     layout
+===================== */
+
+.grid-principal {
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) minmax(0px, 500px) minmax(1em, 1fr);
+  grid-column-gap: 2em;
+}
+
+@media (min-width: 600px) {
+  .grid-principal {
+    grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(150px, 320px)) minmax(
+        1em,
+        1fr
+      );
+  }
+}
+
+/* ==================
+   NAV 
+===================== */
+
+.header {
+  background: black;
+  padding: 1em 0em;
+}
+
+.header-inicio {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+}
+
+.header-contenido {
+  display: flex;
+  grid-column: 2 / -2;
+}
+
+.nav {
+  position: fixed;
+  background: #000;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  transform: translateX(0);
+  transition: transform 250ms;
+}
+
+.nav-abierta {
+  transform: translateX(-100%);
+}
+
+.nav-li {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #ffe600;
+}
+
+.cerrar-nav {
+  border: 0;
+  background: 0;
+  color: #ffe600;
+  font-weight: 700;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0.5em;
+  position: absolute;
+}
+
+.abrir-nav {
+  border: 0;
+  background: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5em;
+  margin-left: auto;
+  font-size: 1.5em;
+}
+
+.pagina-actual {
+  border-bottom: 1px solid #ffe600;
+}
+
+@media (min-width: 600px) {
+  .abrir-nav,
+  .cerrar-nav {
+    display: none;
+  }
+
+  .nav {
+    position: initial;
+  }
+
+  .nav-li {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .nav-item {
+    margin-left: 2em;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .header-inicio .nav {
+    background: transparent;
+  }
+}
+
+/* ==================
+    Footer
+===================== */
+
+.footer {
+  background: #ebebeb;
+  padding: 4em 0;
+  text-align: center;
+
+  grid-template-areas:
+    ". social ."
+    ". main .";
+}
+
+.footer-principal,
+.social-list {
+  grid-column: 2 / -2;
+}
+
+.footer-texto,
+.footer-sello {
+  opacity: 0.3;
+}
+
+.footer-principal {
+  grid-area: main;
+}
+
+.footer-sello {
+  font-size: 0.75rem;
+  margin-top: 4em;
+}
+
+.social-list {
+  grid-area: social;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.social-link {
+  color: #000;
+  font-size: 1.75rem;
+  margin: 0 0.5em;
+}
+
+.social-link:hover {
+  color: #777;
+}
+
+@media (min-width: 600px) {
+  .footer {
+    grid-template-areas: ". main main social .";
+  }
+
+  .footer-principal {
+    text-align: left;
+  }
+
+  .social-list {
+    justify-content: flex-end;
+  }
+}
+
+/* ==================
+    Main 
+===================== */
+
+.main {
+  background-image: url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-color: #3c3c3c;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  padding: 8em 0 4em;
+  color: #fff;
+}
+
+.main > * {
+  grid-column: 2 / -2;
+}
+
+@media (min-width: 400px) {
+  .main > * {
+    margin-right: 20%;
+  }
+}
+
+@media (min-width: 600px) {
+  .main {
+    padding: 10em 0 6em;
+  }
+
+  .main > * {
+    grid-column: 2 / span 2;
+  }
+
+  .btn-newsLetter {
+    font-size: 1em;
+  }
+}
+
+/* ==================
+    seccion info 
+===================== */
+
+.info {
+  padding: 4em 0;
+  text-align: center;
+}
+
+.col {
+  grid-column: 2 / -2;
+}
+
+@media (min-width: 600px) {
+  .col {
+    grid-column: span 1;
+  }
+
+  .col:first-child {
+    grid-column: 2 / span 1;
+  }
+}
+
+/* ==================
+    template 
+===================== */
+
+.main-template {
+  padding: 4em 0;
+}
+
+.main-template > * {
+  grid-column: 2 / -2;
+}
+
+.imagen-principal {
+  margin-bottom: 1.5em;
+  box-shadow: 5px 5px 0px black, 10px 10px 0 #ffe600;
+}
+
+@media (min-width: 600px) {
+  .imagen-principal,
+  .texto-secundario {
+    grid-column: 2;
+  }
+
+  .texto {
+    grid-column: 3 / span 2;
+    grid-row: span 2;
+  }
+
+  .texto-secundario {
+    order: 2;
+  }
+}
+
+/* ==================
+    formulario
+===================== */
+
+.form-contacto {
+  display: grid;
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  margin-bottom: 0.75em;
+  padding: 0.4em;
+  font-family: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+@media (min-width: 600px) {
+  .form-contacto {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    grid-column-gap: 1em;
+  }
+
+  .nombre-label,
+  .nombre-input {
+    grid-column: 1;
+  }
+
+  .email-label,
+  .email-input {
+    grid-column: 2;
+  }
+
+  .mensaje-label,
+  .mensaje-textarea {
+    grid-column: span 2;
+  }
+
+  .btn-form {
+    grid-column: 2;
+  }
+}
