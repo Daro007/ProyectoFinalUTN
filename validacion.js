@@ -3,6 +3,7 @@
 const nombre = document.getElementById("nombre");
 const email = document.getElementById("email");
 const mensaje = document.getElementById("mensaje");
+const btn = document.getElementById("btn-form");
 const emailInvalido = email.validity;
 const textAreaChequeada = mensaje.validity;
 
@@ -51,4 +52,4 @@ function validarMensaje() {
   }
 }
 
-window.addEventListener("load", validarForm);
+btn.addEventListener("click", validarForm);
